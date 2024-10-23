@@ -19,11 +19,11 @@ Learning Rate: 1e-4
 Warm-up Steps: 100
 
 # Key Applications
-Accessibility tools for visually impaired users
-Educational platforms and language learning applications
-Virtual assistants and automated customer service systems
-Media localization and content creation
-Public announcements and navigation systems
+-Accessibility tools for visually impaired users
+-Educational platforms and language learning applications
+-Virtual assistants and automated customer service systems
+-Media localization and content creation
+-Public announcements and navigation systems
 
 # Usage
 Use a Pipeline as a High-Level Helper
@@ -106,34 +106,34 @@ Training loss reduction: from 0.5156 to 0.3425
 
 
 # Key Differences and Improvements:
-Specialized Dataset: Fine-tuned on the keithito/lj_speech dataset to significantly boost performance for English TTS tasks, particularly in technical contexts.
-Speaker Adaptation: Integration of speaker embeddings enables personalized voice generation while retaining speaker characteristics.
-Advanced Text Processing: Features sophisticated text preprocessing capabilities, including:
-Conversion of numbers to word form for more natural speech output
-Effective handling of technical vocabulary and abbreviations (e.g., API, CUDA, GPU)
-Optimized Training Techniques: Utilized mixed precision training (FP16) and gradient checkpointing for enhanced training efficiency on GPU resources.
-Continuous Performance Monitoring: Regular evaluations every 100 steps to track and improve model performance throughout training.
+-Specialized Dataset: Fine-tuned on the keithito/lj_speech dataset to significantly boost performance for English TTS tasks, particularly in technical contexts.
+-Speaker Adaptation: Integration of speaker embeddings enables personalized voice generation while retaining speaker characteristics.
+-Advanced Text Processing: Features sophisticated text preprocessing capabilities, including:
+-Conversion of numbers to word form for more natural speech output
+-Effective handling of technical vocabulary and abbreviations (e.g., API, CUDA, GPU)
+-Optimized Training Techniques: Utilized mixed precision training (FP16) and gradient checkpointing for enhanced training efficiency on GPU resources.
+-Continuous Performance Monitoring: Regular evaluations every 100 steps to track and improve model performance throughout training.
 
 # Model Performance
-Evaluation Strategy: Regular evaluation steps
-Evaluation Frequency: Every 100 steps
-Metric: Not specified (uses greater_is_better=False)
+-Evaluation Strategy: Regular evaluation steps
+-Evaluation Frequency: Every 100 steps
+-Metric: Not specified (uses greater_is_better=False)
 
 # Model Features
-Speech Generation: Capable of generating high-quality speech from textual input.
-Voice Customization: Supports speaker embeddings for diverse voice outputs tailored to user preferences.
-Technical Vocabulary Handling: Specifically designed to accurately synthesize technical terms and industry-specific language.
-Natural Speech Synthesis: Includes functionality for converting numbers to words, contributing to more human-like speech generation.
+-Speech Generation: Capable of generating high-quality speech from textual input.
+-Voice Customization: Supports speaker embeddings for diverse voice outputs tailored to user preferences.
+-Technical Vocabulary Handling: Specifically designed to accurately synthesize technical terms and industry-specific language.
+-Natural Speech Synthesis: Includes functionality for converting numbers to words, contributing to more human-like speech generation.
 
 
 # Limitations
-Language Scope: Currently limited to English language output; additional language support is not available.
-Variability in Voice Quality: The quality of generated speech may vary based on the input text and selected speaker embeddings.
-Performance on Diverse Inputs: Not evaluated for its effectiveness on out-of-domain text or various accents, which may affect accuracy and naturalness.
+-Language Scope: Currently limited to English language output; additional language support is not available.
+-Variability in Voice Quality: The quality of generated speech may vary based on the input text and selected speaker embeddings.
+-Performance on Diverse Inputs: Not evaluated for its effectiveness on out-of-domain text or various accents, which may affect accuracy and naturalness.
 
 # Ethical Considerations
-Potential for misuse in creating deepfake audio
-Bias in voice generation influenced by the demographics of the training data
+-Potential for misuse in creating deepfake audio
+-Bias in voice generation influenced by the demographics of the training data
 
 # Usage
 The model can be used with the Hugging Face Transformers library:
@@ -155,11 +155,11 @@ This model is a fine-tuned version of microsoft/speecht5_tts on an "arif11/Benga
 Text-to-Speech (TTS) synthesis has emerged as a vital technology in our increasingly digital world, serving a wide array of applications from enhancing accessibility to powering virtual assistants. This project centers on fine-tuning Microsoft's SpeechT5 TTS model specifically for Bengali language synthesis. By addressing the need for high-quality speech synthesis systems in Bengali, we aim to create a more inclusive technological landscape that accommodates the linguistic diversity of millions of speakers. This endeavor not only enhances communication but also empowers users with tools that cater to their native language, thereby fostering greater engagement and usability.
 
 # Key Applications
-Accessibility Tools: Enhancing user experiences for visually impaired individuals.
-Educational Platforms: Supporting language learning through interactive audio.
-Virtual Assistants: Enabling more natural conversations with AI.
-Public Announcements: Improving clarity in transportation systems and public information.
-Content Creation: Assisting in media localization and automated content generation.
+-Accessibility Tools: Enhancing user experiences for visually impaired individuals.
+-Educational Platforms: Supporting language learning through interactive audio.
+-Virtual Assistants: Enabling more natural conversations with AI.
+-Public Announcements: Improving clarity in transportation systems and public information.
+-Content Creation: Assisting in media localization and automated content generation.
 
 
 # Usage
@@ -195,17 +195,17 @@ Dataset: arif11/Bengali_AI_Speech
 Model Selection
 The Microsoft SpeechT5 model was selected for its:
 
-Robust multilingual capabilities
-Strong performance across various speech synthesis tasks
-Active community support and comprehensive documentation
-Flexibility for fine-tuning to specific needs
+-Robust multilingual capabilities
+-Strong performance across various speech synthesis tasks
+-Active community support and comprehensive documentation
+-Flexibility for fine-tuning to specific needs
 
 # Dataset Preparation
 The training utilized on the arif11/Bengali_AI_Speech Dataset, characterized by:
 
-High-quality audio recordings from native Bengali speakers
-Diverse phonetic coverage and clean transcriptions
-Balanced representation of genders and speaking styles
+-High-quality audio recordings from native Bengali speakers
+-Diverse phonetic coverage and clean transcriptions
+-Balanced representation of genders and speaking styles
 
 # Training Details
 Training Data: Selected dataset for Bengali TTS
@@ -228,17 +228,17 @@ Optimizer: Adam (β1=0.9, β2=0.999, ε=1e-08)
 Learning Rate Scheduler: Linear with warmup
 
 # Key Enhancements and Improvements
-Dataset: Fine-tuned on a curated Bengali dataset to improve model performance on TTS tasks.
-Speaker Embeddings: Integrated speaker embeddings to maintain speaker characteristics and variations.
-Text Preprocessing: Implemented advanced text preprocessing techniques, including handling of numbers and technical terms.
-Training Optimizations: Utilized FP16 training and gradient checkpointing for efficient resource usage during training.
-Regular Evaluation: Incorporated frequent evaluations throughout training to monitor model performance and make necessary adjustments.    
+-Dataset: Fine-tuned on a curated Bengali dataset to improve model performance on TTS tasks.
+-Speaker Embeddings: Integrated speaker embeddings to maintain speaker characteristics and variations.
+-Text Preprocessing: Implemented advanced text preprocessing techniques, including handling of numbers and technical terms.
+-Training Optimizations: Utilized FP16 training and gradient checkpointing for efficient resource usage during training.
+-Regular Evaluation: Incorporated frequent evaluations throughout training to monitor model performance and make necessary adjustments.    
 
 # Model Features
-Speech Generation: Generates natural-sounding speech from Bengali input text.
-Speaker Customization: Supports speaker embeddings for personalized voice output.
-Technical Vocabulary Handling: Effectively manages technical terms and abbreviations commonly used in Bengali.
-Natural Speech Processing: Converts numbers and technical jargon into a more conversational form for fluent speech synthesis.
+-Speech Generation: Generates natural-sounding speech from Bengali input text.
+-Speaker Customization: Supports speaker embeddings for personalized voice output.
+-Technical Vocabulary Handling: Effectively manages technical terms and abbreviations commonly used in Bengali.
+-Natural Speech Processing: Converts numbers and technical jargon into a more conversational form for fluent speech synthesis.
 
 # Results
 Sample Outputs
@@ -254,9 +254,9 @@ Training Loss Reduction: from 0.5156 to 0.3425
 
 # Subjective Evaluation
 Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
-Naturalness and intelligibility
-Comparison with baseline model performance
-Prosody and emphasis
+-Naturalness and intelligibility
+-Comparison with baseline model performance
+-Prosody and emphasis
 
 # Objective Evaluation
 ## Training Progress
@@ -302,33 +302,33 @@ Datasets: 3.0.1
 Tokenizers: 0.19.1
 
 # Limitations
-Language Limitation: Currently limited to the Bengali language and may not support dialectal variations or other languages.
-Voice Quality Variations: The quality of generated speech may vary based on input text and speaker embeddings.
-Out-of-Domain Performance: Performance on out-of-domain text, slang, or colloquialisms has not been fully evaluated.
+-Language Limitation: Currently limited to the Bengali language and may not support dialectal variations or other languages.
+-Voice Quality Variations: The quality of generated speech may vary based on input text and speaker embeddings.
+-Out-of-Domain Performance: Performance on out-of-domain text, slang, or colloquialisms has not been fully evaluated.
 
 # Ethical Considerations
-Potential Misuse: The technology can be misused for generating misleading or deepfake audio.
-Bias in Voice Generation: The model may reflect biases present in the training data demographics.
+-Potential Misuse: The technology can be misused for generating misleading or deepfake audio.
+-Bias in Voice Generation: The model may reflect biases present in the training data demographics.
 
 # Conclusion
 
 # Key Achievements
-Successfully fine-tuned SpeechT5 for Bengali TTS.
-Achieved substantial reductions in loss metrics.
-Maintained high quality while optimizing performance.
+-Successfully fine-tuned SpeechT5 for Bengali TTS.
+-Achieved substantial reductions in loss metrics.
+-Maintained high quality while optimizing performance.
 
 # Future Improvements
-Expand the dataset to include a broader range of diverse speakers.
-Implement emotion and style transfer capabilities for more dynamic speech synthesis.
-Further optimize inference speed for real-time applications.
-Explore multi-speaker adaptation for varied voice outputs.
-Investigate cross-lingual transfer learning to enhance model versatility.
+-Expand the dataset to include a broader range of diverse speakers.
+-Implement emotion and style transfer capabilities for more dynamic speech synthesis.
+-Further optimize inference speed for real-time applications.
+-Explore multi-speaker adaptation for varied voice outputs.
+-Investigate cross-lingual transfer learning to enhance model versatility.
 
 # Recommendations
-Regularly retrain the model with expanded datasets.
-Establish a continuous evaluation pipeline for performance monitoring.
-Develop specialized preprocessing techniques for Bengali language characteristics.
-Integrate automated quality assessment tools to maintain high standards.
+-Regularly retrain the model with expanded datasets.
+-Establish a continuous evaluation pipeline for performance monitoring.
+-Develop specialized preprocessing techniques for Bengali language characteristics.
+-Integrate automated quality assessment tools to maintain high standards.
 
 # Usage
 The model can be used with the Hugging Face Transformers library:
@@ -362,7 +362,7 @@ Internship Program: PARIMAL intern program at IIT Roorkee
 
 If you use this model, please cite:
 
-```bibtex
+```
 @misc{DeepDiveDev/Bengali_finetuned_speecht5_tts,
   author = {Jyotirmoyee Mandal},
   title = {Task 2: Fine-tuning TTS for Bengali Language},
@@ -370,6 +370,16 @@ If you use this model, please cite:
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://huggingface.co/DeepDiveDev/Bengali_finetuned_speecht5_tts}},
+}
+```
+```
+@misc{DeepDiveDev/speecht5_finetuned_English,
+  author = {Jyotirmoyee Mandal},
+  title = {Fine-tuning TTS for English with a Focus on Technical Vocabulary},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://huggingface.co/DeepDiveDev/speecht5_finetuned_English}},
 }
 ```
 # License
