@@ -54,10 +54,10 @@ from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5Hif
 from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5HifiGan
 
 
-# Generate speech
-# (See example in the notebook for full usage details)
 
 # Acknowledgements
 Base SpeechT5 Model: Developed by Microsoft
+
 Dataset: Keithito LJ Speech
+
 Internship Program: PARIMAL intern program at IIT Roorkee
