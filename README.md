@@ -61,3 +61,8 @@ Base SpeechT5 Model: Developed by Microsoft
 Dataset: Keithito LJ Speech
 
 Internship Program: PARIMAL intern program at IIT Roorkee
+
+
+
+# Task 2: Fine-tuning TTS for a Regional Language
+
