@@ -53,14 +53,6 @@ from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5Hif
 
 from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5HifiGan
 
-[
-# Load the fine-tuned model and associated processor
-model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/speecht5_finetuned_English")
-processor = SpeechT5Processor.from_pretrained("microsoft/speecht5_tts")
-vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
-
-# Example usage to generate speech from text
-# (Refer to the notebook for detailed usage examples)]
 
 # Generate speech
 # (See example in the notebook for full usage details)
