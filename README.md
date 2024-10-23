@@ -17,6 +17,20 @@ Gradient Accumulation Steps: 8
 Learning Rate: 1e-4
 Warm-up Steps: 100
 
+## Metrics Explanation
+
+| Metric                    | Trend                       | Explanation                                                                                     |
+|---------------------------|-----------------------------|-------------------------------------------------------------------------------------------------|
+| eval/loss                 | Decreasing                   | Measures the model's error on the evaluation dataset. Decreasing trend indicates improving model performance. |
+| eval/runtime              | Fluctuating, slightly decreasing | Time taken for evaluation. Minor fluctuations are normal; slight decrease may indicate optimization. |
+| eval/samples_per_second   | Increasing                   | Number of samples processed per second during evaluation. Increase suggests improved processing efficiency. |
+| eval/steps_per_second     | Increasing                   | Number of steps completed per second during evaluation. Increase indicates a faster evaluation process. |
+| train/epoch               | Linearly increasing          | Number of times the entire dataset has been processed. Linear increase is expected.            |
+| train/grad_norm           | Decreasing with fluctuations  | Magnitude of gradients. Decreasing trend with some fluctuations is normal, indicating stabilizing training. |
+| train/learning_rate       | Slightly increasing           | Rate at which the model updates its parameters. Decrease over time is typical in many learning rate schedules. |
+| train/loss                | Decreasing                   | Measures the model's error on the training dataset. Decreasing trend indicates the model is learning. |
+
+
 # Key Differences and Improvements:
 Specialized Dataset: Fine-tuned on the keithito/lj_speech dataset to significantly boost performance for English TTS tasks, particularly in technical contexts.
 Speaker Adaptation: Integration of speaker embeddings enables personalized voice generation while retaining speaker characteristics.
