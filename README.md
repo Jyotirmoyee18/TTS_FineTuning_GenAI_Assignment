@@ -288,5 +288,19 @@ Contributors to the Turkish speech dataset.
 
 The open-source speech processing community for ongoing support and resources.
 
+## Citation
+
+If you use this model, please cite:
+
+```bibtex
+@misc{DeepDiveDev/Bengali_finetuned_speecht5_tts,
+  author = {Jyotirmoyee Mandal},
+  title = {Task 2: Fine-tuning TTS for Bengali Language},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://huggingface.co/DeepDiveDev/Bengali_finetuned_speecht5_tts}},
+}
+```
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
