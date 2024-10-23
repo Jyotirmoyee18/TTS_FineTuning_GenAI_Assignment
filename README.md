@@ -111,6 +111,28 @@ Out-of-Domain Performance: Performance on out-of-domain text, slang, or colloqui
 Potential Misuse: The technology can be misused for generating misleading or deepfake audio.
 Bias in Voice Generation: The model may reflect biases present in the training data demographics.
 
+## Usage
+
+You can utilize the fine-tuned model with the Hugging Face Transformers library. Below is an example of how to generate speech from input text in Bengali:
+
+```python
+from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5HifiGan
+
+# Load the fine-tuned model and processor
+model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/speecht5_finetuned_Bengali")
+processor = SpeechT5Processor.from_pretrained("microsoft/speecht5_tts")
+vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
+
+# Generate speech from input text
+input_text = "আপনি কেমন আছেন?"  # Replace with your text
+inputs = processor(input_text, return_tensors="pt")
+output = model.generate(**inputs)
+
+# Convert output to audio (assuming vocoder is set up)
+audio = vocoder(output)
+
+# Play or save audio as needed
+
 # Acknowledgements
 Base SpeechT5 model by Microsoft
 Dataset providers for Bengali language TTS
