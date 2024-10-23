@@ -209,10 +209,14 @@ Solution: Applied model quantization and batched processing techniques.
  Optimization Results
 Achieved 30% faster inference through model quantization while maintaining quality with minimal degradation.
 Implemented efficient caching for improved memory usage.
+
 # Environment and Dependencies
 Transformers: 4.44.2
+
 PyTorch: 2.4.1+cu121
+
 Datasets: 3.0.1
+
 Tokenizers: 0.19.1
 
 # Limitations
