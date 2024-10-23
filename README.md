@@ -215,6 +215,20 @@ Batch Size: 4 (per device)
 Gradient Accumulation Steps: 8
 Learning Rate: 1e-4
 Warm-up Steps: 100
+## Training procedure
+# Training hyperparameters
+The following hyperparameters were used during training:
+-learning_rate: 0.0001
+-train_batch_size: 4
+-eval_batch_size: 2
+-seed: 42
+-gradient_accumulation_steps: 8
+-total_train_batch_size: 32
+-optimizer: Use adamw_torch with betas=(0.9,0.999) and epsilon=1e-08 and optimizer_args=No additional optimizer arguments
+-lr_scheduler_type: linear
+-lr_scheduler_warmup_steps: 100
+-training_steps: 600
+-mixed_precision_training: Native AMP
 
 # Fine-tuning Process
 The model was fine-tuned using the following hyperparameters:
@@ -261,14 +275,14 @@ Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
 # Objective Evaluation
 ## Training Progress
 
-| Epoch | Training Loss | Validation Loss | Improvement |
-|-------|---------------|------------------|-------------|
-| 0.45  | 0.5156        | 0.4231           | Baseline    |
-| 0.91  | 0.4194        | 0.3936           | 7.0%        |
-| 1.36  | 0.3786        | 0.3376           | 14.2%       |
-| 1.82  | 0.3583        | 0.3290           | 2.5%        |
-| 2.27  | 0.3454        | 0.3196           | 2.9%        |
-| 2.73  | 0.3425        | 0.3155           | 1.3%        |
+| Training Loss | Epoch  | Step | Validation Loss |
+|---------------|--------|------|-----------------|
+| 6.1441        | 1.9422 | 100  | 0.7127          |
+| 5.5876        | 3.8988 | 200  | 0.6550          |
+| 5.2451        | 5.8554 | 300  | 0.6514          |
+| 5.1514        | 7.8120 | 400  | 0.6227          |
+| 4.9727        | 9.7687 | 500  | 0.6220          |
+| 4.9797        | 11.7253| 600  | 0.6190          |
 
 # Challenges and Solutions
 Dataset Challenges
@@ -293,13 +307,10 @@ Achieved 30% faster inference through model quantization while maintaining quali
 Implemented efficient caching for improved memory usage.
 
 # Environment and Dependencies
-Transformers: 4.44.2
-
-PyTorch: 2.4.1+cu121
-
-Datasets: 3.0.1
-
-Tokenizers: 0.19.1
+-Transformers 4.46.0.dev0
+-Pytorch 2.5.0+cu121
+-Datasets 3.0.2
+-Tokenizers 0.20.1
 
 # Limitations
 -Language Limitation: Currently limited to the Bengali language and may not support dialectal variations or other languages.
