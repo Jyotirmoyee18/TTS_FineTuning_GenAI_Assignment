@@ -1,5 +1,6 @@
 # TTS_FineTuning_GenAI_Assignment
 Implementation of fine-tuning TTS models for technical vocabulary in English and in Bengali, as part of IIT Roorkee’s GenAI Internship. Includes dataset creation, model fine-tuning, and evaluation using MOS scores. Also explores optimization techniques like quantization for faster inference.
+
 # Fine-tuning TTS for English with a Focus on Technical Vocabulary
 # Model Overview
 Base Model: Microsoft SpeechT5 (microsoft/speecht5_tts)
@@ -17,6 +18,79 @@ Gradient Accumulation Steps: 8
 Learning Rate: 1e-4
 Warm-up Steps: 100
 
+# Key Applications
+Accessibility tools for visually impaired users
+Educational platforms and language learning applications
+Virtual assistants and automated customer service systems
+Media localization and content creation
+Public announcements and navigation systems
+
+# Usage
+Use a Pipeline as a High-Level Helper
+```
+from transformers import pipeline
+
+pipe = pipeline("text-to-audio", model="DeepDiveDev/speecht5_finetuned_English")
+```
+
+# OR Load Model Directly
+
+```
+from transformers import AutoProcessor, AutoModelForTextToSpectrogram
+
+processor = AutoProcessor.from_pretrained("DeepDiveDev/speecht5_finetuned_English")
+model = AutoModelForTextToSpectrogram.from_pretrained("DeepDiveDev/speecht5_finetuned_English")
+
+```
+
+## Methodology
+
+# Model Selection
+We chose microsoft/speecht5_tts as our base model due to its:
+
+Robust multilingual capabilities
+
+Strong performance on various speech synthesis tasks
+
+Active community support and extensive documentation
+
+Flexibility for fine-tuning
+
+# Dataset Preparation
+The training process utilized the keithito/lj_speech dataset characterized by:
+
+High-quality audio recordings from native English speakers
+
+Diverse phonetic coverage
+
+Clean transcriptions and alignments
+
+Balanced representation of gender
+
+Various speaking styles and prosody patterns
+
+# Fine-tuning Process
+The model was fine-tuned using the following hyperparameters:
+
+Learning rate: 0.0001
+Train batch size: 4 (32 with gradient accumulation)
+Gradient accumulation steps: 8
+Training steps: 1500
+Warmup steps: 100
+Optimizer: Adam (β1=0.9, β2=0.999, ε=1e-08)
+Learning rate scheduler: Linear with warmup
+
+## Result
+# Example Outputs
+Text: "Hello, how are you?"
+Output: "Hello, I am doing well, thank you."
+
+# Objective Evaluation
+The model showed consistent improvement throughout the training process:
+
+Initial validation loss: 0.4231
+Final validation loss: 0.3155
+Training loss reduction: from 0.5156 to 0.3425
 ## Metrics Explanation
 
 | Metric                    | Trend                       | Explanation                                                                                     |
@@ -69,13 +143,6 @@ from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5Hif
 
 
 
-# Acknowledgements
-Base SpeechT5 Model: Developed by Microsoft
-
-Dataset: Keithito LJ Speech
-
-Internship Program: PARIMAL intern program at IIT Roorkee
-
 
 
 # Task 2: Fine-tuning TTS for a Regional Language
@@ -121,7 +188,8 @@ Base Model: Microsoft SpeechT5 (microsoft/speecht5_tts)
 Fine-Tuned Model: DeepDiveDev/Bengali_finetuned_speecht5_tts
 Task: Text-to-Speech (TTS)
 Language: Bengali
-Dataset: Your chosen dataset for Bengali TTS (e.g., common voice datasets)
+Dataset: arif11/Bengali_AI_Speech
+
 
 # Methodology
 Model Selection
@@ -282,11 +350,13 @@ audio = vocoder(speech)
 ```
 
 # Acknowledgements
-Microsoft for providing the base SpeechT5 model.
+Base SpeechT5 Model: Developed by Microsoft
 
-Contributors to the Turkish speech dataset.
+Dataset: Keithito LJ Speech, arif11/Bengali_AI_Speech
 
 The open-source speech processing community for ongoing support and resources.
+
+Internship Program: PARIMAL intern program at IIT Roorkee
 
 ## Citation
 
