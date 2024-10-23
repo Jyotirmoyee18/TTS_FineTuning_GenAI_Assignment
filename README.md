@@ -175,6 +175,19 @@ Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
 Naturalness and intelligibility
 Comparison with baseline model performance
 Prosody and emphasis
+
+# Objective Evaluation
+## Training Progress
+
+| Epoch | Training Loss | Validation Loss | Improvement |
+|-------|---------------|------------------|-------------|
+| 0.45  | 0.5156        | 0.4231           | Baseline    |
+| 0.91  | 0.4194        | 0.3936           | 7.0%        |
+| 1.36  | 0.3786        | 0.3376           | 14.2%       |
+| 1.82  | 0.3583        | 0.3290           | 2.5%        |
+| 2.27  | 0.3454        | 0.3196           | 2.9%        |
+| 2.73  | 0.3425        | 0.3155           | 1.3%        |
+
 # Challenges and Solutions
 Dataset Challenges
 Limited Availability: High-quality Bengali speech data was scarce.
