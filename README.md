@@ -738,6 +738,20 @@ Quantization was applied to both Bengali and English models using PyTorch’s dy
 # Pruning
 Pruning involves removing unnecessary weights from the model, further optimizing it for faster inference.
 
+
+### **MOS Score**
+
+The Mean Opinion Score (MOS) is used to evaluate the quality of the synthesized speech. Below are the scores obtained for both Bengali and English models before and after optimization:
+
+| Model           | Pre-Optimization MOS | Post-Quantization MOS | Post-Pruning MOS |
+|-----------------|----------------------|-----------------------|------------------|
+| Bengali TTS     | 4.0                  | 3.0                   |  3.0             |
+| English TTS     | 3.33                 | 4.5                   |  5.0             |
+
+These scores indicate the perceived audio quality of the text-to-speech models, with higher values representing better quality.
+
+
+
   ### Conclusion & Future Work
 
 # Key Achievements
