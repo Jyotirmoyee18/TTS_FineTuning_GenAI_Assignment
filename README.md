@@ -190,7 +190,7 @@ from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5Hif
 from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5HifiGan
 
 
-```---------------------------------------------------------------------------------------------------------------------------------------```
+```-------------------------------------------------------------------------------------------------------------------------------------```
 
 
 ### Task 2: Fine-tuning TTS for a Regional Language
