@@ -156,9 +156,9 @@ The model was fine-tuned using the following hyperparameters:
 
 ## Result
 # Example Outputs
-Text: "In an interview, they asked me to design a RESTful API from scratch." [#Change the output as per your choice]
+**Text:** 'Integrating OAuth 2.0 with the existing system was a challenge, but it significantly improved security.'
 
-Output: 
+**Output**: [Click here to listen](https://drive.google.com/file/d/1OYQnHDWj6pV9afeU1wGCsNWrby07PuEQ/view?usp=drive_link)
 
 # Objective Evaluation
 The model showed consistent improvement throughout the training process:
