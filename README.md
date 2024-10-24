@@ -807,5 +807,11 @@ If you use this model, please cite:
   Contact Information: {Jyotirmoyeemandal63@gmail.com}.
 }
 ```
+
+## References
+
+This code draws lessons from:
+- [Hugging Face Audio Course - Fine-Tuning](https://huggingface.co/learn/audio-course/en/chapter6/fine-tuning)
+
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
