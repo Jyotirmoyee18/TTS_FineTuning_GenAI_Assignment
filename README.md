@@ -1,6 +1,6 @@
 # TTS_FineTuning_GenAI_Assignment
 Implementation of fine-tuning TTS models for technical vocabulary in English and in Bengali, as part of IIT Roorkee’s GenAI Internship. Includes dataset creation, model fine-tuning, and evaluation using MOS scores. Also explores optimization techniques like quantization for faster inference.
-```--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------```
+***--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------***
 ## Fine-tuning TTS for English with a Focus on Technical Vocabulary
 # Model Overview
 . Base Model: Microsoft SpeechT5 (microsoft/speecht5_tts)
