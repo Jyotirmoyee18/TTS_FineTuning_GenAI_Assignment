@@ -37,7 +37,9 @@ from transformers import pipeline
 pipe = pipeline("text-to-audio", model="DeepDiveDev/speecht5_finetuned_English")
 ```
 
-# OR Load Model Directly
+or
+
+# Load Model Directly
 
 ```
 from transformers import AutoProcessor, AutoModelForTextToSpectrogram
@@ -202,6 +204,7 @@ from transformers import pipeline
 
 pipe = pipeline("text-to-audio", model="DeepDiveDev/Bengali_finetuned_speecht5_tts")
 ```
+or 
 
 # Load Model Directly
 For more control, you can load the model and processor directly:
