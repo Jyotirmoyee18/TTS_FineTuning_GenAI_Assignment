@@ -714,7 +714,7 @@ These scores indicate the perceived audio quality of the text-to-speech models, 
 
 -Enhance model performance with multi-speaker adaptation and emotion synthesis.
 
-***------------------------------------------------------------------------------------------------------------------------------------------------------------------------***
+***-----------------------------------------------------------------------------------------------------------------------------------------------------------------***
 ## Bengali Fine-tuned SpeechT5 TTS
 This repository contains a fine-tuned version of the microsoft/speecht5_tts model for Bengali text-to-speech synthesis. The model was fine-tuned on a custom dataset to achieve enhanced TTS performance for Bengali.
 
