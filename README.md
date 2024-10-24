@@ -41,6 +41,7 @@ Model Links:
 # Installation Requirements:
 ```
 pip install transformers torch
+pip install transformers soundfile
 ```
 # Steps to Run the Code:
 ## Clone the Repository:
@@ -59,7 +60,7 @@ model = AutoModelForTextToSpectrogram.from_pretrained("DeepDiveDev/speecht5_fine
 
 # Run Inference:
 ```
-text = "Hello, how are you?" [your text input here]
+text = "I will use an API with OAuth and CUDA to train the LLM model on a GPU" [your text input here]
 input_features = processor(text, return_tensors="pt")
 audio = model.generate(input_features["input_ids"])
 ```
