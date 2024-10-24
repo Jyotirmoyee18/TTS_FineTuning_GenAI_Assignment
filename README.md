@@ -768,7 +768,7 @@ The model performance improved over the training process as seen below:
 | 4.9727        | 9.7687 | 500   | 0.6220          |
 | 4.9797        | 11.7253| 600   | 0.6190          |
 
-![Model Training Loss Plot](./photo.jpg)
+![Model Training Loss Plot](TraningMetricsBengali.png)
 
 # Framework Versions
 The following framework versions were used for the fine-tuning:
