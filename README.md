@@ -599,6 +599,11 @@ inputs = processor(text, return_tensors="pt")
 speech = model.generate(**inputs)
 audio = vocoder(speech)
 ```
+## Audio Samples
+For comparison, audio samples generated from both the pre-trained and fine-tuned models are provided. These samples illustrate the enhancements achieved through fine-tuning.
+
+before Fine tuning: '[click here] (https://drive.google.com/file/d/1_Ewfy-APfcTWYLRbychqieEZZ5Oe3G94/view?usp=drive_link)'
+after Fine tuning: '[click here] (https://drive.google.com/file/d/1AfgJBvXoI0qgHxu32kQtCVNHchEANU0S/view?usp=drive_link)'
 
 
 ***-------------------------------------------------------------------------------------------------------------------------------------------------------------***
