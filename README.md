@@ -38,6 +38,31 @@ Model Links:
 
 . Dataset: keithito/lj_speech
 
+# Installation Requirements:
+```
+pip install transformers torch
+```
+# Steps to Run the Code:
+## Clone the Repository:
+```
+git clone [repository_link]
+cd [repository_name]
+```
+
+## Load the Model and Processor:
+```
+from transformers import AutoProcessor, AutoModelForTextToSpectrogram
+
+processor = AutoProcessor.from_pretrained("DeepDiveDev/speecht5_finetuned_English")
+model = AutoModelForTextToSpectrogram.from_pretrained("DeepDiveDev/speecht5_finetuned_English")
+```
+
+# Run Inference:
+```
+text = "Hello, how are you?" [your text input here]
+input_features = processor(text, return_tensors="pt")
+audio = model.generate(input_features["input_ids"])
+```
 # Training Details
 
 - Training Data: Train split from the keithito/lj_speech dataset
@@ -628,6 +653,7 @@ If you use this model, please cite:
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://huggingface.co/DeepDiveDev/speecht5_finetuned_English}},
+  Contact Information: {Jyotirmoyeemandal63@gmail.com}.
 }
 ```
 # License
