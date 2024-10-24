@@ -104,7 +104,7 @@ Training loss reduction: from 0.5156 to 0.3425
 | train/learning_rate       | Slightly increasing           | Rate at which the model updates its parameters. Decrease over time is typical in many learning rate schedules. |
 | train/loss                | Decreasing                   | Measures the model's error on the training dataset. Decreasing trend indicates the model is learning. |
 
-
+![My Image](TraningMetricsBengali.png)
 
 # Key Differences and Improvements:
 -Specialized Dataset: Fine-tuned on the keithito/lj_speech dataset to significantly boost performance for English TTS tasks, particularly in technical contexts.
@@ -285,7 +285,6 @@ Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
 | 4.9727        | 9.7687 | 500  | 0.6220          |
 | 4.9797        | 11.7253| 600  | 0.6190          |
 
-![My Image](https://github.com/USERNAME/REPOSITORY_NAME/raw/BRANCH_NAME/Screenshot%202024-10-24%20052613.png)
 
 # Challenges and Solutions
 Dataset Challenges
