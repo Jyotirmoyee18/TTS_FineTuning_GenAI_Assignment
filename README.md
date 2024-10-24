@@ -251,6 +251,32 @@ This model is a fine-tuned version of microsoft/speecht5_tts on an "arif11/Benga
 # Introduction
 Text-to-Speech (TTS) synthesis has emerged as a vital technology in our increasingly digital world, serving a wide array of applications from enhancing accessibility to powering virtual assistants. This project centers on fine-tuning Microsoft's SpeechT5 TTS model specifically for Bengali language synthesis. By addressing the need for high-quality speech synthesis systems in Bengali, we aim to create a more inclusive technological landscape that accommodates the linguistic diversity of millions of speakers. This endeavor not only enhances communication but also empowers users with tools that cater to their native language, thereby fostering greater engagement and usability.
 
+# Steps to Run the Code
+## Clone the Repository:
+```
+git clone ['https://github.com/Jyotirmoyee18/TTS_FineTuning_GenAI_Assignment.git']
+cd ['SpeechT5_finetune_technicalTerm.ipynb']
+
+# Install the dependency
+
+```
+pip install transformers soundfile
+```
+```
+from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5HifiGan
+
+model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/speecht5_finetuned_Bengali")
+processor = SpeechT5Processor.from_pretrained("microsoft/speecht5_tts")
+vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
+
+# Example Bengali text
+text = "আমি মেশিন লার্নিং নিয়ে কাজ করছি।"
+inputs = processor(text, return_tensors="pt")
+
+# Generate speech
+speech = model.generate(**inputs)
+audio = vocoder(speech)
+```
 # Key Applications
 
 -Accessibility Tools: Enhancing user experiences for visually impaired individuals.
