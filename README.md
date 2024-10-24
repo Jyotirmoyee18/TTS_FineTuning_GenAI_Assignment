@@ -578,7 +578,7 @@ audio = vocoder(speech)
 ### Optimization & Inference Results
 
 # Introduction
-Text-to-Speech (TTS) synthesis has become an essential tool in a variety of fields, from accessibility technologies to virtual assistants. This project fine-tunes Microsoft's SpeechT5 for both Bengali and English language synthesis, addressing the growing demand for high-quality, multilingual TTS systems.
+This repository contains the implementation and optimization of fine-tuned Bengali and English Text-to-Speech (TTS) models based on SpeechT5 architecture. The primary goal of this project is to optimize the model for faster inference without compromising output quality using techniques like model quantization and pruning.
 
 This fine-tuning focuses on improving the efficiency of TTS inference, particularly by exploring quantization techniques and testing the model on different hardware to optimize performance.
 
@@ -587,6 +587,7 @@ This fine-tuning focuses on improving the efficiency of TTS inference, particula
 . Bengali Model
 
 - Base Model: microsoft/speecht5_tts
+- Example Text for Inference: "আপনি কেমন আছেন?"
   
 - Dataset: Custom Bengali dataset with native speaker audio recordings.
   
@@ -633,6 +634,110 @@ The models were developed and tested in the following environment:
   ```
   pip install transformers torch datasets
   ```
+
+  # How to Run the Code
+- Load the fine-tuned models (both Bengali and English).
+
+- Measure inference time.
+
+- Apply optimization techniques like quantization and pruning.
+
+- Compare inference times and model sizes before and after optimization.
+
+  
+Here’s how you can structure the README file with a professional touch for your project, based on the Bonus Task: Fast Inference Optimization:
+
+TTS Model Fast Inference Optimization
+This repository contains the implementation and optimization of fine-tuned Bengali and English Text-to-Speech (TTS) models based on SpeechT5 architecture. The primary goal of this project is to optimize the model for faster inference without compromising output quality using techniques like model quantization and pruning.
+
+Table of Contents
+Introduction
+Models
+Bengali TTS
+English TTS
+Setup and Requirements
+Inference Time
+Optimization Techniques
+Model Quantization
+Pruning
+Evaluation
+MOS Score
+Inference Time Benchmark
+Conclusion
+Introduction
+The focus of this project is to optimize the inference speed of fine-tuned Bengali and English SpeechT5 TTS models, while ensuring high-quality synthesized speech. The task was approached by implementing quantization and pruning techniques, and by evaluating the trade-offs between model size, inference time, and audio quality.
+
+Models
+Bengali TTS
+Model Name: DeepDiveDev/Bengali_finetuned_speecht5_tts
+Example Text for Inference: "আপনি কেমন আছেন?"
+English TTS
+Model Name: DeepDiveDev/speecht5_finetuned_English
+Example Text for Inference: "How are you doing today?"
+Setup and Requirements
+Prerequisites
+Python 3.8+
+PyTorch
+Hugging Face Transformers
+Datasets Library
+Install Dependencies
+bash
+Copy code
+pip install torch datasets transformers
+How to Run the Code
+Load the fine-tuned models (both Bengali and English).
+Measure inference time.
+Apply optimization techniques like quantization and pruning.
+Compare inference times and model sizes before and after optimization.
+Example code for loading the models and running inference:
+
+python
+Copy code
+import time
+import torch
+from datasets import load_dataset
+from transformers import SpeechT5Processor, SpeechT5ForTextToSpeech
+
+# Load processor and model
+processor = SpeechT5Processor.from_pretrained("DeepDiveDev/Bengali_finetuned_speecht5_tts")
+model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/Bengali_finetuned_speecht5_tts")
+
+# Set model to evaluation mode
+model.eval()
+
+# Example text for inference
+text = "আপনি কেমন আছেন?"  # Bengali text
+
+# Tokenize text input
+inputs = processor(text=text, return_tensors="pt")
+
+# Load speaker embeddings
+speaker_embeddings_dataset = load_dataset("Matthijs/cmu-arctic-xvectors", split="validation")
+speaker_embeddings = torch.tensor(speaker_embeddings_dataset[0]["xvector"]).unsqueeze(0)
+
+# Measure inference time
+start_time = time.time()
+with torch.no_grad():
+    spectrogram = model.generate(inputs["input_ids"], speaker_embeddings=speaker_embeddings)
+end_time = time.time()
+
+# Output inference time
+print(f"Inference Time: {end_time - start_time:.4f} seconds")
+Inference Time
+Bengali TTS Model
+Pre-Optimization Inference Time: 3.9312 seconds
+Post-Optimization Inference Time: [Enter Quantized Time]
+English TTS Model
+Pre-Optimization Inference Time: 6.5786 seconds
+Post-Optimization Inference Time: [Enter Quantized Time]
+
+##  Optimization Techniques
+# Model Quantization
+Quantization was applied to both Bengali and English models using PyTorch’s dynamic quantization feature. This reduces the precision of model weights, resulting in a smaller model size and faster inference speed.
+
+# Pruning
+Pruning involves removing unnecessary weights from the model, further optimizing it for faster inference.
+
   ### Conclusion & Future Work
 
 # Key Achievements
