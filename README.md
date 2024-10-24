@@ -474,7 +474,7 @@ The model exhibited consistent improvement during training:
 
 - Training Loss Reduction: from 1.0764 to 0.6184
 
-![My Image](TraningMetricsBengali.png)
+![My Image](French_TrainingMetrics.png)
 
 # Subjective Evaluation
 
