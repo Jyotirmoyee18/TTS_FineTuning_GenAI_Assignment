@@ -6,7 +6,7 @@ Implementation of fine-tuning TTS models for technical vocabulary in English and
 This repository contains the code and resources for fine-tuning a SpeechT5 model for text-to-speech (TTS) tasks in both English and Bengali. The SpeechT5 model, developed by Microsoft, is a state-of-the-art architecture designed for TTS applications, offering robust multilingual capabilities. In this project, we focus on enhancing the pronunciation of technical terms in English while providing high-quality speech synthesis for Bengali.
 
 Leveraging Hugging Face's Transformers library, this implementation utilizes PyTorch for data preprocessing and model training. The code includes fully implemented functions for training and evaluation, allowing for efficient adaptation and experimentation with the model. We encourage users to explore and modify the code as needed to optimize performance for their specific use cases.
-![Example Image](images/example.png)
+![Example Image](speecht5_framework.png)
 
 Model Links: 
 
