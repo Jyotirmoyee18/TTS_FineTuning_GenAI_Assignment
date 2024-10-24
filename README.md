@@ -104,7 +104,7 @@ Training loss reduction: from 0.5156 to 0.3425
 | train/learning_rate       | Slightly increasing           | Rate at which the model updates its parameters. Decrease over time is typical in many learning rate schedules. |
 | train/loss                | Decreasing                   | Measures the model's error on the training dataset. Decreasing trend indicates the model is learning. |
 
-![My Image]("C:\Users\JYOTIRMOYEE MANDAL\Downloads\Screenshot 2024-10-24 052613.png")
+
 
 # Key Differences and Improvements:
 -Specialized Dataset: Fine-tuned on the keithito/lj_speech dataset to significantly boost performance for English TTS tasks, particularly in technical contexts.
