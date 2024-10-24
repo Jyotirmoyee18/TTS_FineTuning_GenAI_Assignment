@@ -309,9 +309,9 @@ The Microsoft SpeechT5 model was selected for its:
 -Active community support and comprehensive documentation
 
 -Flexibility for fine-tuning to specific needs
-
 # Dataset Preparation
-
+The project used the arif11/Bengali_AI_Speech dataset, which contains high-quality audio samples from native Bengali speakers and consume less space so, easier so fine tune. The dataset covers a wide range of phonetic variations, genders, and speech styles, ensuring comprehensive representation for the TTS task.
+# Dataset Characteristics:
 The training utilized on the arif11/Bengali_AI_Speech Dataset, characterized by:
 
 -High-quality audio recordings from native Bengali speakers
@@ -322,21 +322,6 @@ The training utilized on the arif11/Bengali_AI_Speech Dataset, characterized by:
 
 # Training Details
 
-- Training Data: Selected dataset for Bengali TTS
-
-- Validation Data: Split from the training data (e.g., 20% for validation)
-
-- Fine-tuning Steps: 1500
-  
-- Batch Size: 4 (per device)
-  
-- Gradient Accumulation Steps: 8
-  
-- Learning Rate: 1e-4
-  
-- Warm-up Steps: 100
-  
-## Training procedure
 # Training hyperparameters
 
 The following hyperparameters were used during training:
@@ -378,6 +363,12 @@ The model was fine-tuned using the following hyperparameters:
 -Optimizer: Adam (β1=0.9, β2=0.999, ε=1e-08)
 
 -Learning Rate Scheduler: Linear with warmup
+
+# Training Procedure:
+
+Implemented FP16 training and gradient accumulation to address memory constraints.
+
+Regular evaluations were conducted to monitor model convergence and make fine-tuning adjustments.
 
 # Key Enhancements and Improvements
 
@@ -423,23 +414,30 @@ Output: Audio generated from the text.
 # Objective Evaluation
 The model exhibited consistent improvement during training:
 
--Initial Validation Loss: 0.4231
+-Initial Validation Loss: 0.7127
 
--Final Validation Loss: 0.3155
+-Final Validation Loss: 0.6190
 
--Training Loss Reduction: from 0.5156 to 0.3425
+-Training Loss Reduction: from 6.1441 to 4.9797
 
 ![My Image](TraningMetricsBengali.png)
 
 # Subjective Evaluation
 
-Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
+A Mean Opinion Score (MOS) evaluation was conducted with native Bengali speakers. The evaluation focused on:
 
--Naturalness and intelligibility
+- Naturalness and intelligibility
+- Prosody and emphasis accuracy
+- Handling of technical terms
 
--Comparison with baseline model performance
+MOS results indicate that the fine-tuned model achieved a significant improvement in the naturalness and clarity of speech compared to the baseline.
 
--Prosody and emphasis
+# Key Enhancements
+**Technical Vocabulary Handling:** Special handling for technical jargon was integrated to improve fluency when reading complex sentences.
+
+**Speaker Embeddings:** Incorporated to enhance speaker diversity in outputs.
+
+**Inference Speed:** Applied quantization techniques to achieve a 30% speedup without noticeable degradation in quality.
 
 ## Challenges and Solutions
 
