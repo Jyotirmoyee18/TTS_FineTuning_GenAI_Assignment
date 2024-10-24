@@ -255,7 +255,7 @@ Text-to-Speech (TTS) synthesis has emerged as a vital technology in our increasi
 ## Clone the Repository:
 ```
 git clone ['https://github.com/Jyotirmoyee18/TTS_FineTuning_GenAI_Assignment.git']
-cd ['SpeechT5_finetune_technicalTerm.ipynb']
+cd ['Fine_tuning_TTS_Bengali.ipynb']
 
 # Install the dependency
 
