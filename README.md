@@ -156,9 +156,9 @@ The model was fine-tuned using the following hyperparameters:
 
 ## Result
 # Example Outputs
-Text: "Hello, how are you?" [#Change the output as per your choice]
+Text: "In an interview, they asked me to design a RESTful API from scratch." [#Change the output as per your choice]
 
-Output: "Hello, I am doing well, thank you."
+Output: 
 
 # Objective Evaluation
 The model showed consistent improvement throughout the training process:
