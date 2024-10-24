@@ -276,7 +276,7 @@ inputs = processor(text, return_tensors="pt")
 # Generate speech
 speech = model.generate(**inputs)
 audio = vocoder(speech)
-```
+
 # Key Applications
 
 -Accessibility Tools: Enhancing user experiences for visually impaired individuals.
