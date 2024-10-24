@@ -27,6 +27,7 @@ Model Links:
 ***------------------------------------------------------------------------------------------------------------------------------------------------***
 ## Fine-tuning TTS for English with a Focus on Technical Vocabulary
 # Model Overview
+
 . Base Model: Microsoft SpeechT5 (microsoft/speecht5_tts)
 
 . Fine-Tuned Model: DeepDiveDev/speecht5_finetuned_English
