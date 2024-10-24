@@ -285,6 +285,8 @@ Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
 | 4.9727        | 9.7687 | 500  | 0.6220          |
 | 4.9797        | 11.7253| 600  | 0.6190          |
 
+![My Image](https://github.com/USERNAME/REPOSITORY_NAME/raw/BRANCH_NAME/Screenshot%202024-10-24%20052613.png)
+
 # Challenges and Solutions
 Dataset Challenges
 Limited Availability: High-quality Bengali speech data was scarce.
