@@ -162,6 +162,21 @@ The model was fine-tuned using the following hyperparameters:
 . Learning rate scheduler: Linear with warmup
 
 ## Result
+
+
+### Training Loss Summary
+
+| Training Loss | Epoch  | Step | Validation Loss |
+|---------------|--------|------|-----------------|
+| 0.4691        | 0.3053 | 100  | 0.4127          |
+| 0.4492        | 0.6107 | 200  | 0.4079          |
+| 0.4342        | 0.9160 | 300  | 0.3940          |
+| 0.4242        | 1.2214 | 400  | 0.3917          |
+| 0.4215        | 1.5267 | 500  | 0.3866          |
+| 0.4207        | 1.8321 | 600  | 0.3843          |
+
+
+
 # Example Outputs
 **Text:** 'Integrating OAuth 2.0 with the existing system was a challenge, but it significantly improved security.'
 
