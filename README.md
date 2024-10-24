@@ -46,7 +46,7 @@ pip install transformers torch
 ## Clone the Repository:
 ```
 git clone ['https://github.com/Jyotirmoyee18/TTS_FineTuning_GenAI_Assignment.git']
-cd []
+cd ['SpeechT5_finetune_technicalTerm.ipynb']
 ```
 
 ## Load the Model and Processor:
