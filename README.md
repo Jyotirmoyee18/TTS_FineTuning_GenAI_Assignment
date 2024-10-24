@@ -3,9 +3,9 @@ Implementation of fine-tuning TTS models for technical vocabulary in English and
 
 Model Links: 
 
-1. DeepDiveDev/Bengali_finetuned_speecht5_tts
+1.  DeepDiveDev/Bengali_finetuned_speecht5_tts
+2.  DeepDiveDev/speecht5_finetuned_English
 
-2. DeepDiveDev/speecht5_finetuned_English
 
 # Table of Contents
 
