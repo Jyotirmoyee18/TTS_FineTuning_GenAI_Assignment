@@ -266,6 +266,7 @@ Initial Validation Loss: 0.4231
 Final Validation Loss: 0.3155
 Training Loss Reduction: from 0.5156 to 0.3425
 
+![My Image](TraningMetricsBengali.png)
 
 # Subjective Evaluation
 Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
