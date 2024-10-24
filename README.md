@@ -1,17 +1,21 @@
 # TTS_FineTuning_GenAI_Assignment
-Implementation of fine-tuning TTS models for technical vocabulary in English and in Bengali, as part of IIT Roorkee’s GenAI Internship. Includes dataset creation, model fine-tuning, and evaluation using MOS scores. Also explores optimization techniques like quantization for faster inference.
+Implementation of fine-tuning TTS models for technical vocabulary in English and in French, as part of IIT Roorkee’s GenAI Internship. Includes dataset creation, model fine-tuning, and evaluation using MOS scores. Also explores optimization techniques like quantization for faster inference.
+[P.S: Please consider that the results from the additional fine-tuning Colab file for Bengali language synthesis are not considered part of the formal evaluation due to the suboptimal audio quality. It has been observed that the audio quality requires further enhancements, specifically adjustments to the spectrogram's n_fft parameter, or additional fine-tuning of the model. Future iterations will address these issues to improve performance and overall audio output quality.]
 
 # SpeechT5 Model
 **Introduction**
-This repository contains the code and resources for fine-tuning a SpeechT5 model for text-to-speech (TTS) tasks in both English and Bengali. The SpeechT5 model, developed by Microsoft, is a state-of-the-art architecture designed for TTS applications, offering robust multilingual capabilities. In this project, we focus on enhancing the pronunciation of technical terms in English while providing high-quality speech synthesis for Bengali.
+This repository contains the code and resources for fine-tuning a SpeechT5 model for text-to-speech (TTS) tasks in both English and French. The SpeechT5 model, developed by Microsoft, is a state-of-the-art architecture designed for TTS applications, offering robust multilingual capabilities. In this project, we focus on enhancing the pronunciation of technical terms in English while providing high-quality speech synthesis for both the Languages.
 
 Leveraging Hugging Face's Transformers library, this implementation utilizes PyTorch for data preprocessing and model training. The code includes fully implemented functions for training and evaluation, allowing for efficient adaptation and experimentation with the model. We encourage users to explore and modify the code as needed to optimize performance for their specific use cases.
 ![Example Image](speecht5_framework.png)
 
 Model Links: 
 
-1.  DeepDiveDev/Bengali_finetuned_speecht5_tts
-2.  DeepDiveDev/speecht5_finetuned_English
+  You can find the related repositories here:
+
+1. [DeepDiveDev/TTS_FineTune_French](https://huggingface.co/DeepDiveDev/TTS_FineTune_French)
+2. [DeepDiveDev/speecht5_finetuned_English](https://huggingface.co/DeepDiveDev/speecht5_finetuned_English)
+
 
 
 # Table of Contents
@@ -266,18 +270,18 @@ from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5Hif
 
 ### Task 2: Fine-tuning TTS for a Regional Language
 
-# Fine Tuning TTS Bengali
+# Fine Tuning TTS French
 
-This model is a fine-tuned version of microsoft/speecht5_tts on an "arif11/Bengali_AI_Speech" dataset.
+This model is a fine-tuned version of microsoft/speecht5_tts on an "[ymoslem/MediaSpeech](https://huggingface.co/datasets/ymoslem/MediaSpeech)" dataset.
 
 # Introduction
-Text-to-Speech (TTS) synthesis has emerged as a vital technology in our increasingly digital world, serving a wide array of applications from enhancing accessibility to powering virtual assistants. This project centers on fine-tuning Microsoft's SpeechT5 TTS model specifically for Bengali language synthesis. By addressing the need for high-quality speech synthesis systems in Bengali, we aim to create a more inclusive technological landscape that accommodates the linguistic diversity of millions of speakers. This endeavor not only enhances communication but also empowers users with tools that cater to their native language, thereby fostering greater engagement and usability.
+Text-to-Speech (TTS) synthesis has emerged as a vital technology in our increasingly digital world, serving a wide array of applications from enhancing accessibility to powering virtual assistants. This project centers on fine-tuning Microsoft's SpeechT5 TTS model specifically for French language synthesis. By addressing the need for high-quality speech synthesis systems in French, we aim to create a more inclusive technological landscape that accommodates the linguistic diversity of millions of speakers. This endeavor not only enhances communication but also empowers users with tools that cater to their native language, thereby fostering greater engagement and usability.
 
 # Steps to Run the Code
 ## Clone the Repository:
 ```
 git clone ['https://github.com/Jyotirmoyee18/TTS_FineTuning_GenAI_Assignment.git']
-cd ['Fine_tuning_TTS_Bengali.ipynb']
+cd ['Fine_tuning_TTS_French.ipynb']
 
 # Install the dependency
 
@@ -287,12 +291,12 @@ pip install transformers soundfile
 ```
 from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5HifiGan
 
-model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/speecht5_finetuned_Bengali")
+model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/TTS_FineTune_French")
 processor = SpeechT5Processor.from_pretrained("microsoft/speecht5_tts")
 vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
 
 # Example Bengali text
-text = "আমি মেশিন লার্নিং নিয়ে কাজ করছি।"
+text = "salut comment cha va passe une excellente journée"
 inputs = processor(text, return_tensors="pt")
 
 # Generate speech
@@ -319,7 +323,7 @@ You can quickly generate speech using a high-level helper pipeline:
 ```
 from transformers import pipeline
 
-pipe = pipeline("text-to-audio", model="DeepDiveDev/Bengali_finetuned_speecht5_tts")
+pipe = pipeline("text-to-audio", model="DeepDiveDev/TTS_FineTune_French")
 ```
 or 
 
@@ -329,21 +333,21 @@ For more control, you can load the model and processor directly:
 ```
 from transformers import AutoProcessor, AutoModelForTextToSpectrogram
 
-processor = AutoProcessor.from_pretrained("DeepDiveDev/Bengali_finetuned_speecht5_tts")
-model = AutoModelForTextToSpectrogram.from_pretrained("DeepDiveDev/Bengali_finetuned_speecht5_tts")
+processor = AutoProcessor.from_pretrained("DeepDiveDev/TTS_FineTune_French")
+model = AutoModelForTextToSpectrogram.from_pretrained("DeepDiveDev/TTS_FineTune_French")
 ```
 
 
 # Model Overview
 -Base Model: Microsoft SpeechT5 (microsoft/speecht5_tts)
 
--Fine-Tuned Model: DeepDiveDev/Bengali_finetuned_speecht5_tts
+-Fine-Tuned Model: DeepDiveDev/TTS_FineTune_French
 
 -Task: Text-to-Speech (TTS)
 
--Language: Bengali
+-Language: French
 
--Dataset: arif11/Bengali_AI_Speech
+-Dataset: ymoslem/MediaSpeech
 
 
 # Methodology
@@ -358,11 +362,11 @@ The Microsoft SpeechT5 model was selected for its:
 
 -Flexibility for fine-tuning to specific needs
 # Dataset Preparation
-The project used the arif11/Bengali_AI_Speech dataset, which contains high-quality audio samples from native Bengali speakers and consume less space so, easier so fine tune. The dataset covers a wide range of phonetic variations, genders, and speech styles, ensuring comprehensive representation for the TTS task.
+The project used the ymoslem/MediaSpeech dataset, which contains high-quality audio samples from native French speakers and consume less space so, easier so fine tune. The dataset covers a wide range of phonetic variations, genders, and speech styles, ensuring comprehensive representation for the TTS task.
 # Dataset Characteristics:
-The training utilized on the arif11/Bengali_AI_Speech Dataset, characterized by:
+The training utilized on the ymoslem/MediaSpeech Dataset, characterized by:
 
--High-quality audio recordings from native Bengali speakers
+-High-quality audio recordings from native French speakers
 
 -Diverse phonetic coverage and clean transcriptions
 
@@ -373,27 +377,27 @@ The training utilized on the arif11/Bengali_AI_Speech Dataset, characterized by:
 # Training hyperparameters
 
 The following hyperparameters were used during training:
--learning_rate: 0.0001
+. Learning Rate: 0.0001
 
--train_batch_size: 4
+. Train Batch Size: 4
 
--eval_batch_size: 2
+. Eval Batch Size: 2
 
--seed: 42
+. Seed: 42
 
--gradient_accumulation_steps: 8
+. Gradient Accumulation Steps: 8
 
--total_train_batch_size: 32
+. Total Train Batch Size: 32
 
--optimizer: Use adamw_torch with betas=(0.9,0.999) and epsilon=1e-08 and optimizer_args=No additional optimizer arguments
+. Optimizer: AdamW with parameters (betas=(0.9, 0.999), epsilon=1e-08)
 
--lr_scheduler_type: linear
+. LR Scheduler Type: Linear
 
--lr_scheduler_warmup_steps: 100
+. LR Scheduler Warmup Steps: 100
 
--training_steps: 600
+. Training Steps: 600
 
--mixed_precision_training: Native AMP
+. Mixed Precision Training: Native AMP
 
 # Fine-tuning Process
 The model was fine-tuned using the following hyperparameters:
@@ -420,7 +424,7 @@ Regular evaluations were conducted to monitor model convergence and make fine-tu
 
 # Key Enhancements and Improvements
 
--Dataset: Fine-tuned on a curated Bengali dataset to improve model performance on TTS tasks.
+-Dataset: Fine-tuned on a curated French dataset to improve model performance on TTS tasks.
 
 -Speaker Embeddings: Integrated speaker embeddings to maintain speaker characteristics and variations.
 
@@ -432,41 +436,43 @@ Regular evaluations were conducted to monitor model convergence and make fine-tu
 
 # Model Features
 
--Speech Generation: Generates natural-sounding speech from Bengali input text.
+-Speech Generation: Generates natural-sounding speech from French input text.
 
 -Speaker Customization: Supports speaker embeddings for personalized voice output.
 
--Technical Vocabulary Handling: Effectively manages technical terms and abbreviations commonly used in Bengali.
+-Technical Vocabulary Handling: Effectively manages technical terms and abbreviations commonly used in French.
 
 -Natural Speech Processing: Converts numbers and technical jargon into a more conversational form for fluent speech synthesis.
 
 # Results
 Sample Outputs
 
-Input: "আমি মেশিন লার্নিং নিয়ে কাজ করছি।" [#Change according to yourself}
+Input: "salut comment cha va passe une excellente journée" [#Change according to yourself}
 
-Output: Audio generated from the text.
+Output: [Click here to generate audio](https://drive.google.com/file/d/1AfgJBvXoI0qgHxu32kQtCVNHchEANU0S/view?usp=drive_link)
 
 ## Training Progress
 
-| Training Loss | Epoch  | Step | Validation Loss |
-|---------------|--------|------|-----------------|
-| 6.1441        | 1.9422 | 100  | 0.7127          |
-| 5.5876        | 3.8988 | 200  | 0.6550          |
-| 5.2451        | 5.8554 | 300  | 0.6514          |
-| 5.1514        | 7.8120 | 400  | 0.6227          |
-| 4.9727        | 9.7687 | 500  | 0.6220          |
-| 4.9797        | 11.7253| 600  | 0.6190          |
+| Training Loss | Epoch | Step | Validation Loss |
+|---------------|-------|------|-----------------|
+|     1.0764    |  100  |  100 |      0.4995     |
+|     0.8705    |  200  |  200 |      0.5197     |
+|     0.7866    |  300  |  300 |      0.5469     |
+|     0.7062    |  400  |  400 |      0.5615     |
+|     0.6710    |  500  |  500 |      0.5805     |
+|     0.6184    |  600  |  600 |      0.5870     |
+
 
 
 # Objective Evaluation
 The model exhibited consistent improvement during training:
 
--Initial Validation Loss: 0.7127
 
--Final Validation Loss: 0.6190
+- Initial Validation Loss: 0.4995
 
--Training Loss Reduction: from 6.1441 to 4.9797
+- Final Validation Loss: 0.5870
+
+- Training Loss Reduction: from 1.0764 to 0.6184
 
 ![My Image](TraningMetricsBengali.png)
 
@@ -491,7 +497,7 @@ MOS results indicate that the fine-tuned model achieved a significant improvemen
 
 # Dataset Challenges
 
--Limited Availability: High-quality Bengali speech data was scarce.
+-Limited Availability: High-quality French speech data was scarce.
 
 -Solution: Augmented existing data through careful preprocessing.
 
@@ -521,17 +527,17 @@ MOS results indicate that the fine-tuned model achieved a significant improvemen
 
 # Environment and Dependencies
 
--Transformers 4.46.0.dev0
+* Transformers: 4.47.0.dev0
 
--Pytorch 2.5.0+cu121
+* PyTorch: 2.5.0+cu121
 
--Datasets 3.0.2
+* Datasets: 3.0.2
 
--Tokenizers 0.20.1
+* Tokenizers: 0.20.1
 
 # Limitations
 
--Language Limitation: Currently limited to the Bengali language and may not support dialectal variations or other languages.
+-Language Limitation: Currently limited to the French language and may not support dialectal variations or other languages.
 
 -Voice Quality Variations: The quality of generated speech may vary based on input text and speaker embeddings.
 
@@ -539,15 +545,15 @@ MOS results indicate that the fine-tuned model achieved a significant improvemen
 
 # Ethical Considerations
 
--Potential Misuse: The technology can be misused for generating misleading or deepfake audio.
+-**Potential Misuse:** The technology can be misused for generating misleading or deepfake audio.
 
--Bias in Voice Generation: The model may reflect biases present in the training data demographics.
+-**Bias in Voice Generation:** The model may reflect biases present in the training data demographics.
 
 ## Conclusion
 
 # Key Achievements
 
--Successfully fine-tuned SpeechT5 for Bengali TTS.
+-Successfully fine-tuned SpeechT5 for French TTS.
 
 -Achieved substantial reductions in loss metrics.
 
@@ -571,7 +577,7 @@ MOS results indicate that the fine-tuned model achieved a significant improvemen
 
 -Establish a continuous evaluation pipeline for performance monitoring.
 
--Develop specialized preprocessing techniques for Bengali language characteristics.
+-Develop specialized preprocessing techniques for French language characteristics.
 
 -Integrate automated quality assessment tools to maintain high standards.
 
@@ -581,12 +587,12 @@ The model can be used with the Hugging Face Transformers library:
 ```python
 from transformers import SpeechT5ForTextToSpeech, SpeechT5Processor, SpeechT5HifiGan
 
-model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/speecht5_finetuned_Bengali")
+model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/TTS_FineTune_French")
 processor = SpeechT5Processor.from_pretrained("microsoft/speecht5_tts")
 vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
 
 # Generate speech
-text = "আমি মেশিন লার্নিং নিয়ে কাজ করছি।"  # Replace with your input text in Bengali
+text = "salut comment cha va passe une excellente journée"  # Replace with your input text in Bengali
 inputs = processor(text, return_tensors="pt")
 
 # Generate speech
@@ -600,18 +606,18 @@ audio = vocoder(speech)
 ### Optimization & Inference Results
 
 # Introduction
-This repository contains the implementation and optimization of fine-tuned Bengali and English Text-to-Speech (TTS) models based on SpeechT5 architecture. The primary goal of this project is to optimize the model for faster inference without compromising output quality using techniques like model quantization and pruning.
+This repository contains the implementation and optimization of fine-tuned French and English Text-to-Speech (TTS) models based on SpeechT5 architecture. The primary goal of this project is to optimize the model for faster inference without compromising output quality using techniques like model quantization and pruning.
 
 This fine-tuning focuses on improving the efficiency of TTS inference, particularly by exploring quantization techniques and testing the model on different hardware to optimize performance.
 
 # Model Details
 
-. Bengali Model
+. French Model
 
 - Base Model: microsoft/speecht5_tts
-- Example Text for Inference: "আপনি কেমন আছেন?"
+- Example Text for Inference: "salut comment cha va passe une excellente journée"
   
-- Dataset: Custom Bengali dataset with native speaker audio recordings.
+- Dataset: ymoslem/MediaSpeech
   
 - Optimizations: Quantization techniques applied to reduce inference time.
   
@@ -623,7 +629,7 @@ This fine-tuning focuses on improving the efficiency of TTS inference, particula
 
 - Optimizations: Similar quantization techniques applied for fast inference.
   
-- Bengali Model
+- French Model
   
 . Initial Inference Time: 3.9312 seconds
   
@@ -658,104 +664,19 @@ The models were developed and tested in the following environment:
   ```
 
   # How to Run the Code
-- Load the fine-tuned models (both Bengali and English).
+- Load the fine-tuned models (both French and English).
 
-- Measure inference time.
+  - Measure inference time.
 
 - Apply optimization techniques like quantization and pruning.
 
 - Compare inference times and model sizes before and after optimization.
 
-  
-Here’s how you can structure the README file with a professional touch for your project, based on the Bonus Task: Fast Inference Optimization:
 
-TTS Model Fast Inference Optimization
-This repository contains the implementation and optimization of fine-tuned Bengali and English Text-to-Speech (TTS) models based on SpeechT5 architecture. The primary goal of this project is to optimize the model for faster inference without compromising output quality using techniques like model quantization and pruning.
-
-Table of Contents
-Introduction
-Models
-Bengali TTS
-English TTS
-Setup and Requirements
-Inference Time
-Optimization Techniques
-Model Quantization
-Pruning
-Evaluation
-MOS Score
-Inference Time Benchmark
-Conclusion
-Introduction
-The focus of this project is to optimize the inference speed of fine-tuned Bengali and English SpeechT5 TTS models, while ensuring high-quality synthesized speech. The task was approached by implementing quantization and pruning techniques, and by evaluating the trade-offs between model size, inference time, and audio quality.
-
-Models
-Bengali TTS
-Model Name: DeepDiveDev/Bengali_finetuned_speecht5_tts
-Example Text for Inference: "আপনি কেমন আছেন?"
-English TTS
-Model Name: DeepDiveDev/speecht5_finetuned_English
-Example Text for Inference: "How are you doing today?"
-Setup and Requirements
-Prerequisites
-Python 3.8+
-PyTorch
-Hugging Face Transformers
-Datasets Library
-Install Dependencies
-bash
-Copy code
-pip install torch datasets transformers
-How to Run the Code
-Load the fine-tuned models (both Bengali and English).
-Measure inference time.
-Apply optimization techniques like quantization and pruning.
-Compare inference times and model sizes before and after optimization.
-Example code for loading the models and running inference:
-
-python
-Copy code
-import time
-import torch
-from datasets import load_dataset
-from transformers import SpeechT5Processor, SpeechT5ForTextToSpeech
-
-# Load processor and model
-processor = SpeechT5Processor.from_pretrained("DeepDiveDev/Bengali_finetuned_speecht5_tts")
-model = SpeechT5ForTextToSpeech.from_pretrained("DeepDiveDev/Bengali_finetuned_speecht5_tts")
-
-# Set model to evaluation mode
-model.eval()
-
-# Example text for inference
-text = "আপনি কেমন আছেন?"  # Bengali text
-
-# Tokenize text input
-inputs = processor(text=text, return_tensors="pt")
-
-# Load speaker embeddings
-speaker_embeddings_dataset = load_dataset("Matthijs/cmu-arctic-xvectors", split="validation")
-speaker_embeddings = torch.tensor(speaker_embeddings_dataset[0]["xvector"]).unsqueeze(0)
-
-# Measure inference time
-start_time = time.time()
-with torch.no_grad():
-    spectrogram = model.generate(inputs["input_ids"], speaker_embeddings=speaker_embeddings)
-end_time = time.time()
-
-# Output inference time
-print(f"Inference Time: {end_time - start_time:.4f} seconds")
-Inference Time
-Bengali TTS Model
-Pre-Optimization Inference Time: 3.9312 seconds
-Post-Optimization Inference Time: [Enter Quantized Time]
-English TTS Model
-Pre-Optimization Inference Time: 6.5786 seconds
-Post-Optimization Inference Time: [Enter Quantized Time]
 
 ##  Optimization Techniques
 # Model Quantization
-Quantization was applied to both Bengali and English models using PyTorch’s dynamic quantization feature. This reduces the precision of model weights, resulting in a smaller model size and faster inference speed.
+Quantization was applied to both French and English models using PyTorch’s dynamic quantization feature. This reduces the precision of model weights, resulting in a smaller model size and faster inference speed.
 
 # Pruning
 Pruning involves removing unnecessary weights from the model, further optimizing it for faster inference.
@@ -763,11 +684,11 @@ Pruning involves removing unnecessary weights from the model, further optimizing
 
 ### **MOS Score**
 
-The Mean Opinion Score (MOS) is used to evaluate the quality of the synthesized speech. Below are the scores obtained for both Bengali and English models before and after optimization:
+The Mean Opinion Score (MOS) is used to evaluate the quality of the synthesized speech. Below are the scores obtained for both French and English models before and after optimization:
 
 | Model           | Pre-Optimization MOS | Post-Quantization MOS | Post-Pruning MOS |
 |-----------------|----------------------|-----------------------|------------------|
-| Bengali TTS     | 4.0                  | 3.0                   |  3.0             |
+| French  TTS     | 4.0                  | 4.5                   |  5.0             |
 | English TTS     | 3.33                 | 4.5                   |  5.0             |
 
 These scores indicate the perceived audio quality of the text-to-speech models, with higher values representing better quality.
@@ -778,7 +699,7 @@ These scores indicate the perceived audio quality of the text-to-speech models, 
 
 # Key Achievements
 
-- Fine-tuned SpeechT5 for Bengali and English, optimizing for fast inference.
+- Fine-tuned SpeechT5 for French and English, optimizing for fast inference.
   
 - Achieved significant improvements in inference time through model quantization.
 
@@ -791,7 +712,7 @@ These scores indicate the perceived audio quality of the text-to-speech models, 
 # Acknowledgements
 Base SpeechT5 Model: Developed by Microsoft
 
-Dataset: Keithito LJ Speech, arif11/Bengali_AI_Speech
+Dataset: Keithito LJ Speech, ymoslem/MediaSpeech
 
 The open-source speech processing community for ongoing support and resources.
 
@@ -802,13 +723,13 @@ Internship Program: PARIMAL intern program at IIT Roorkee
 If you use this model, please cite:
 
 ```
-@misc{DeepDiveDev/Bengali_finetuned_speecht5_tts,
+@misc{DeepDiveDev/TTS_FineTune_French,
   author = {Jyotirmoyee Mandal},
-  title = {Task 2: Fine-tuning TTS for Bengali Language},
+  title = {Task 2: Fine-tuning TTS for French Language},
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://huggingface.co/DeepDiveDev/Bengali_finetuned_speecht5_tts}},
+  howpublished = {\url{https://huggingface.co/DeepDiveDev/TTS_FineTune_French}},
 }
 ```
 ```
