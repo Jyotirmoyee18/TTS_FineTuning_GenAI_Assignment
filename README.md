@@ -748,6 +748,10 @@ If you use this model, please cite:
   Contact Information: {Jyotirmoyeemandal63@gmail.com}.
 }
 ```
+## Find the final report of this assingment
+
+You can access the final report [here](./FinalReport_TTS_FineTune.pdf).
+
 
 ## References
 
