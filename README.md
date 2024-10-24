@@ -1,6 +1,28 @@
 # TTS_FineTuning_GenAI_Assignment
 Implementation of fine-tuning TTS models for technical vocabulary in English and in Bengali, as part of IIT Roorkee’s GenAI Internship. Includes dataset creation, model fine-tuning, and evaluation using MOS scores. Also explores optimization techniques like quantization for faster inference.
 
+Model Links: 
+
+1. DeepDiveDev/Bengali_finetuned_speecht5_tts
+
+2. DeepDiveDev/speecht5_finetuned_English
+
+# Table of Contents
+
+1.  Introduction
+  
+2.  Model Details
+  
+3.  Optimization & Inference Results
+  
+4.  Usage
+  
+5. Environment & Dependencies
+  
+6. Conclusion & Future Work
+  
+7. Citations
+
    
 ***-------------------------------------------------------------------------------------------------------------------------------------------------------------***
 ## Fine-tuning TTS for English with a Focus on Technical Vocabulary
@@ -498,6 +520,81 @@ inputs = processor(text, return_tensors="pt")
 speech = model.generate(**inputs)
 audio = vocoder(speech)
 ```
+
+
+***-------------------------------------------------------------------------------------------------------------------------------------------------------------***
+
+### Optimization & Inference Results
+
+# Introduction
+Text-to-Speech (TTS) synthesis has become an essential tool in a variety of fields, from accessibility technologies to virtual assistants. This project fine-tunes Microsoft's SpeechT5 for both Bengali and English language synthesis, addressing the growing demand for high-quality, multilingual TTS systems.
+
+This fine-tuning focuses on improving the efficiency of TTS inference, particularly by exploring quantization techniques and testing the model on different hardware to optimize performance.
+
+# Model Details
+
+. Bengali Model
+
+- Base Model: microsoft/speecht5_tts
+  
+- Dataset: Custom Bengali dataset with native speaker audio recordings.
+  
+- Optimizations: Quantization techniques applied to reduce inference time.
+  
+. English Model
+
+- Base Model: microsoft/speecht5_tts
+
+- Dataset: English language dataset.
+
+- Optimizations: Similar quantization techniques applied for fast inference.
+  
+- Bengali Model
+  
+. Initial Inference Time: 3.9312 seconds
+  
+. Post-Optimization: Quantization and fast inference optimizations were applied, maintaining high audio quality with reduced inference time.
+
+- English Model
+  
+. Initial Inference Time: 6.5786 seconds
+
+. Post-Optimization: The English model showed slightly longer inference times due to dataset and speaker embedding complexity, but optimizations led to significant improvements.
+
+-Model Quantization:
+
+. Both models used Post-Training Quantization (PTQ) to enhance speed without compromising much on audio quality.
+
+# Environment & Dependencies
+The models were developed and tested in the following environment:
+
+- Transformers: 4.44.2
+  
+- PyTorch: 2.4.1
+  
+- Datasets: 3.0.1
+  
+- Tokenizers: 0.19.1
+  
+- Hugging Face Hub: Latest version
+  
+  You can install the necessary dependencies using:
+  ```
+  pip install transformers torch datasets
+  ```
+  ### Conclusion & Future Work
+
+# Key Achievements
+
+- Fine-tuned SpeechT5 for Bengali and English, optimizing for fast inference.
+  
+- Achieved significant improvements in inference time through model quantization.
+
+# Future Improvements
+
+-Further reduce inference time through advanced techniques such as pruning and distillation.
+
+-Enhance model performance with multi-speaker adaptation and emotion synthesis.
 
 # Acknowledgements
 Base SpeechT5 Model: Developed by Microsoft
