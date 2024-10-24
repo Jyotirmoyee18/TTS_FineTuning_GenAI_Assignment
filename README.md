@@ -45,8 +45,8 @@ pip install transformers torch
 # Steps to Run the Code:
 ## Clone the Repository:
 ```
-git clone [repository_link]
-cd [repository_name]
+git clone ['https://github.com/Jyotirmoyee18/TTS_FineTuning_GenAI_Assignment.git']
+cd []
 ```
 
 ## Load the Model and Processor:
