@@ -262,6 +262,7 @@ The Microsoft SpeechT5 model was selected for its:
 -Flexibility for fine-tuning to specific needs
 
 # Dataset Preparation
+
 The training utilized on the arif11/Bengali_AI_Speech Dataset, characterized by:
 
 -High-quality audio recordings from native Bengali speakers
@@ -271,15 +272,24 @@ The training utilized on the arif11/Bengali_AI_Speech Dataset, characterized by:
 -Balanced representation of genders and speaking styles
 
 # Training Details
-Training Data: Selected dataset for Bengali TTS
-Validation Data: Split from the training data (e.g., 20% for validation)
-Fine-tuning Steps: 1500
-Batch Size: 4 (per device)
-Gradient Accumulation Steps: 8
-Learning Rate: 1e-4
-Warm-up Steps: 100
+
+- Training Data: Selected dataset for Bengali TTS
+
+- Validation Data: Split from the training data (e.g., 20% for validation)
+
+- Fine-tuning Steps: 1500
+  
+- Batch Size: 4 (per device)
+  
+- Gradient Accumulation Steps: 8
+  
+- Learning Rate: 1e-4
+  
+- Warm-up Steps: 100
+  
 ## Training procedure
 # Training hyperparameters
+
 The following hyperparameters were used during training:
 -learning_rate: 0.0001
 
@@ -344,7 +354,9 @@ The model was fine-tuned using the following hyperparameters:
 
 # Results
 Sample Outputs
-Input: "আমি মেশিন লার্নিং নিয়ে কাজ করছি।"
+
+Input: "আমি মেশিন লার্নিং নিয়ে কাজ করছি।" [#Change according to yourself}
+
 Output: Audio generated from the text.
 
 ## Training Progress
@@ -371,7 +383,9 @@ The model exhibited consistent improvement during training:
 ![My Image](TraningMetricsBengali.png)
 
 # Subjective Evaluation
+
 Mean Opinion Score (MOS) tests conducted with native Bengali speakers assessed:
+
 -Naturalness and intelligibility
 
 -Comparison with baseline model performance
