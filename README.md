@@ -16,13 +16,20 @@ Implementation of fine-tuning TTS models for technical vocabulary in English and
 . Dataset: keithito/lj_speech
 
 # Training Details
-Training Data: Train split from the keithito/lj_speech dataset
-Validation Data: Test split from the same dataset (20% of total data)
-Fine-tuning Steps: 1500
-Batch Size: 4 (per device)
-Gradient Accumulation Steps: 8
-Learning Rate: 1e-4
-Warm-up Steps: 100
+
+- Training Data: Train split from the keithito/lj_speech dataset
+
+- Validation Data: Test split from the same dataset (20% of total data)
+
+- Fine-tuning Steps: 1500
+
+- Batch Size: 4 (per device)
+
+- Gradient Accumulation Steps: 8
+
+- Learning Rate: 1e-4
+
+- Warm-up Steps: 100
 
 # Key Applications
 -Accessibility tools for visually impaired users
