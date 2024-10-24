@@ -78,13 +78,19 @@ The training process utilized the keithito/lj_speech dataset characterized by:
 # Fine-tuning Process
 The model was fine-tuned using the following hyperparameters:
 
-Learning rate: 0.0001
-Train batch size: 4 (32 with gradient accumulation)
-Gradient accumulation steps: 8
-Training steps: 1500
-Warmup steps: 100
-Optimizer: Adam (β1=0.9, β2=0.999, ε=1e-08)
-Learning rate scheduler: Linear with warmup
+. Learning rate: 0.0001
+
+. Train batch size: 4 (32 with gradient accumulation)
+
+. Gradient accumulation steps: 8
+
+. Training steps: 1500
+
+. Warmup steps: 100
+
+. Optimizer: Adam (β1=0.9, β2=0.999, ε=1e-08)
+
+. Learning rate scheduler: Linear with warmup
 
 ## Result
 # Example Outputs
