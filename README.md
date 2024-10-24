@@ -714,6 +714,74 @@ These scores indicate the perceived audio quality of the text-to-speech models, 
 
 -Enhance model performance with multi-speaker adaptation and emotion synthesis.
 
+## Bengali Fine-tuned SpeechT5 TTS
+This repository contains a fine-tuned version of the microsoft/speecht5_tts model for Bengali text-to-speech synthesis. The model was fine-tuned on a custom dataset to achieve enhanced TTS performance for Bengali.
+
+# Model Summary
+This model is a fine-tuned version of microsoft/speecht5_tts and achieves the following results on the evaluation set:
+
+. Loss: 0.6190
+
+. Model Description
+
+The fine-tuned SpeechT5 TTS model has been optimized to generate high-quality Bengali speech. More detailed information about the architecture and improvements applied during the fine-tuning process will be provided soon.
+
+# Intended Uses & Limitations
+The model is intended for Bengali speech synthesis tasks. However, specific use cases and any known limitations are currently being reviewed and will be added.
+
+# Training and Evaluation Data
+The dataset used for fine-tuning the model has not been publicly disclosed yet. Once the dataset details are available, they will be provided here.
+
+## Training Procedure
+# Training Hyperparameters
+The model was trained using the following hyperparameters:
+
+- Learning rate: 0.0001
+
+- Training batch size: 4
+
+- Evaluation batch size: 2
+
+- Seed: 42
+
+- Gradient accumulation steps: 8
+
+- Total training batch size: 32
+
+- Optimizer: AdamW (betas=(0.9, 0.999) and epsilon=1e-08)
+
+- Learning rate scheduler: Linear, with 100 warmup steps
+
+- Training steps: 600
+
+- Mixed precision training: Native AMP
+
+# Training Results
+The model performance improved over the training process as seen below:
+
+| Training Loss | Epoch  | Step  | Validation Loss |
+|---------------|--------|-------|-----------------|
+| 6.1441        | 1.9422 | 100   | 0.7127          |
+| 5.5876        | 3.8988 | 200   | 0.6550          |
+| 5.2451        | 5.8554 | 300   | 0.6514          |
+| 5.1514        | 7.8120 | 400   | 0.6227          |
+| 4.9727        | 9.7687 | 500   | 0.6220          |
+| 4.9797        | 11.7253| 600   | 0.6190          |
+
+![Model Training Loss Plot](./photo.jpg)
+
+# Framework Versions
+The following framework versions were used for the fine-tuning:
+
+- Transformers: 4.46.0.dev0
+
+- PyTorch: 2.5.0+cu121
+
+- Datasets: 3.0.2
+
+- Tokenizers: 0.20.1
+
+
 # Acknowledgements
 Base SpeechT5 Model: Developed by Microsoft
 
